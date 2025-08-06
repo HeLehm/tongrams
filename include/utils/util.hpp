@@ -10,7 +10,11 @@
 #include <locale>
 #include <string.h>
 
-#include <xmmintrin.h>
+#if defined(__x86_64__) || defined(_M_X64) || defined(__i386__)
+#  include <xmmintrin.h>
+#else
+#  include <sse2neon.h>   // maps SSE intrinsics to ARM/NEON
+#endif
 #if TONGRAMS_USE_POPCNT
 #include <smmintrin.h>
 #endif

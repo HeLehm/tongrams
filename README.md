@@ -235,6 +235,13 @@ Python Wrapper
 The directory `python` includes a simple python wrapper with some examples.
 Check this out!
 
+Build on Mac
+```bash
+rm -rf build && mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-isystem$(brew --prefix)/include/sse2neon"
+make -j4
+```
+
 Authors
 -------
 * [Giulio Ermanno Pibiri](http://pages.di.unipi.it/pibiri/), <giulio.pibiri@di.unipi.it>
