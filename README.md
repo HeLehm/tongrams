@@ -242,6 +242,11 @@ cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_FLAGS="-
 make -j4
 ```
 
+test predict_demo
+```bash
+./build_trie ef_trie 5 prob_backoff --remapping 2 --u -20.0 --p 8 --b 8 --arpa ../test_data/arpa --out ef_trie.prob_backoff.bin
+./test_predict_demo ef_trie.prob_backoff.bin 5
+```
 Authors
 -------
 * [Giulio Ermanno Pibiri](http://pages.di.unipi.it/pibiri/), <giulio.pibiri@di.unipi.it>
